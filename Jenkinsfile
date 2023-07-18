@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "matthew/react-app"
+    dockerimagename = "bravinwasike/react-app"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/mattyhy/jenkins-k8s-app.git'
+        git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
       }
     }
 
@@ -25,7 +25,7 @@ pipeline {
 
     stage('Pushing Image') {
       environment {
-               registryCredential = 'dockerhub-credential'
+               registryCredential = 'dockerhub-credentials'
            }
       steps{
         script {
